@@ -11,7 +11,7 @@ This bot will help you confess your trubles to your favourite and famous Croatia
 
 ### USEFUL LINKS:
 
-**register bot:** **
+**register bot:** 
 
 https://dev.botframework.com/bots/new
 
