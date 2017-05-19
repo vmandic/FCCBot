@@ -27,5 +27,5 @@ https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-quickst
 **bot emulator:**
 https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
 
-**Z.M. soundboard**
+**Z.M. soundboard:**
 http://zdravko-mamic.com/
