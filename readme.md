@@ -11,24 +11,17 @@ This bot will help you confess your trubles to your favourite and famous Croatia
 
 ### USEFUL LINKS:
 
-**register bot:** 
-
+**register bot:**
 https://dev.botframework.com/bots/new
 
-
-
 **get started:**
-
 https://docs.microsoft.com/en-us/bot-framework/bot-builder-overview-getstarted
 
-
-
 **quickstart dotnet:**
-
 https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-quickstart
 
-
-
 **bot emulator:**
-
 https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
+
+**Z.M. soundboard**
+http://zdravko-mamic.com/
