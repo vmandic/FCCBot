@@ -1,4 +1,5 @@
-﻿using FamousCroatianConfessionBot.Bot;
+﻿using FamousCroatianConfessionBot.Model;
+using FamousCroatianConfessionBot.Bot;
 using Microsoft.Bot.Connector;
 using System;
 using System.Linq;

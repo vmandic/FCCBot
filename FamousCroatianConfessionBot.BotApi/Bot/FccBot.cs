@@ -81,7 +81,7 @@ namespace FamousCroatianConfessionBot.Bot
           }
           else // Name was provided
           {
-            strReplyMessage.Append($"{data.UserName}, you said and I'll repeat: \"{activity.Text}\"\r\n");
+            strReplyMessage.Append($"{data.UserName}, you said and I'll repeat: \"{activity.Text}\"\n\r");
             strReplyMessage.Append($"If you'd like to see something smart... send me a selfie photo! :)");
           }
         }
