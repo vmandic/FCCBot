@@ -77,7 +77,7 @@ namespace FamousCroatianConfessionBot {
           strReplyMessage.Append( $"Hello {activity.Text}!" );
 
           // Set BotUserData
-          //data.UserName = activity.Text;
+          data.UserName = activity.Text;
         } else // Name was provided
           {
           strReplyMessage.Append( $"{data.UserName}, You said: {activity.Text}" );

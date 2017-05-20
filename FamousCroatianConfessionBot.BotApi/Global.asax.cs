@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FamousCroatianConfessionBot.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,11 @@ namespace FamousCroatianConfessionBot
 		protected void Application_Start()
 		{
 			GlobalConfiguration.Configure(WebApiConfig.Register);
+			DataModel.LoadFromFile();
+		}
+
+		protected void Application_End() {
+			DataModel.SaveToFile();
 		}
 	}
 }
