@@ -1,4 +1,5 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
+﻿using FamousCroatianConfessionBot.Model;
+using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using Microsoft.ProjectOxford.Emotion;
 using Microsoft.ProjectOxford.Emotion.Contract;
@@ -63,9 +64,7 @@ namespace FamousCroatianConfessionBot {
     string RespondOnText( UData data, Activity activity ) {
       StringBuilder strReplyMessage = new StringBuilder();
       if ( data.AskedForUserName == false ) {
-        strReplyMessage.Append( $"Hej! Šta ima!" );
-        strReplyMessage.Append( $"\n\r" );
-        strReplyMessage.Append( $"Šta god da kažeš, koga zanima?" );
+        strReplyMessage.Append( DataModel.GetHelloMessage() );
 
         // Set BotUserData
         data.AskedForUserName = true;

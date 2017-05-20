@@ -13,6 +13,23 @@ namespace FamousCroatianConfessionBot.Model {
 	public static class DataModel {
 		static Data _data = new Data();
 
+		static string[] _helloMessages = new string[] {
+			"Ako si tražila muškarca s dobrim stanjem na računu, moram ti priznati da je Isus otplatio sve moje dugove",
+			"E oprosti, mislim da jedno tvoje rebro pripada meni",
+			"Pazi da ne prekršiš petu Božju zapovijed, jer tvoja ljepota me ubija",
+			"Primijetio sam da imaš lijepu Bibliju, mogli bi podcrtavati retke zajedno",
+			"Izgledaš mi kao da slušaš Božje zapovijedi, e pa prva Božja zapovijed je plodite se i množite. Što kažeš?",
+			"Jeste li možda za večeru? Evo, obećavam da neće biti posljednja",
+			"Je li to ovdje tako vruće ili to gori duh sveti u tebi?"
+		};
+
+		public static string GetHelloMessage() {
+			Random rng = new Random();
+			return _helloMessages[rng.Next( 0, _helloMessages.Count() )];
+		}
+
+
+
 		public static void SaveToFile() {
 			using ( MemoryStream ms = new MemoryStream() )
 			using ( BsonWriter writer = new BsonWriter( ms ) ) {
