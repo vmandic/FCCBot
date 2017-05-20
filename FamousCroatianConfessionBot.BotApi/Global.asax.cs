@@ -13,6 +13,7 @@ namespace FamousCroatianConfessionBot
 		protected void Application_Start()
 		{
 			GlobalConfiguration.Configure(WebApiConfig.Register);
+			BotConfig.Configure();
 			DataModel.LoadFromFile();
 		}
 
