@@ -21,3 +21,4 @@ npm-debug.log
 *.min.css
 *.sdf
 *.bundle
+App_Data/
