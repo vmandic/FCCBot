@@ -1,13 +1,14 @@
 # FCCBot (a famous croatian perosn confession bot)
 
-This bot will help you confess your trubles to a (in)famous croatian person. You can have a nice chat with Mr. Zdravko (the bot's name). Zdravko can test your honesty and tell you how you feel by sending him a nice selfie of yourself. Good luck and chat fair! :)
+This bot will help you confess your trubles and show your true feelings to a famous croatian person. So, you can have a nice chat with Mr. Zdravko (the bot's name). Zdravko can test your honesty and tell you how you feel by sending him a nice selfie of yourself. Good luck and chat fair! :)
 
 ---
 
 ### PREREQ:
 - VS 2015
-- download the [bot emulator](https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator)
-- enter the started localhost address appended with `/api/messages` to the bot emulator and start chatting over the bot emulator
+- download and install [ngrok](https://ngrok.com/download) for the bot emulator
+- download the [bot emulator](https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator) so you can test it locally
+- enter the started localhost address / or the remote address where it is deployed and appended with `/api/messages` to the bot emulator and start chatting over the bot emulator
 
 ### IDEA / ABOUT:
 - inception at our company's friday hackathon, just for fun, no *real-deal* thing... our goal was to build a bot, host it, make it public and make it use some "cognitive" services :)
@@ -27,3 +28,6 @@ https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-quickst
 
 **bot emulator:**
 https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
+
+**ngrok for bot emulator tunneling:**
+https://ngrok.com/download
