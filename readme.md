@@ -1,6 +1,6 @@
-# FCCBot (famous croatian confession bot)
+# FCCBot (a famous croatian perosn confession bot)
 
-This bot will help you confess your trubles to your favourite and famous Croatian person. For starters, the bot will impersonate one of Croatia's favourite soccer league persons, Mr. Mamić. You can have a nice chat with Zdravko over this bot. Good luck. :)
+This bot will help you confess your trubles to a (in)famous croatian person. You can have a nice chat with Mr. Zdravko (the bot's name). Zdravko can test your honesty and tell you how you feel by sending him a nice selfie of yourself. Good luck and chat fair! :)
 
 ---
 
@@ -10,8 +10,9 @@ This bot will help you confess your trubles to your favourite and famous Croatia
 - enter the started localhost address appended with `/api/messages` to the bot emulator and start chatting over the bot emulator
 
 ### IDEA / ABOUT:
-- inception at our company's friday hackathon
-- this chat bot will ask you a series of simple YES or NO questions and play a game of honesty with you. After each question you should get an audio response from Zdravko and in the end a result of analyzing your voice articulation to tell if you are telling the truth or lies mostly, i.e. are you a liar or not.
+- inception at our company's friday hackathon, just for fun, no *real-deal* thing... our goal was to build a bot, host it, make it public and make it use some "cognitive" services :)
+- Zdravko has two main features or tasks if you wish. First, Zdravko can ask you a series of simple YES or NO questions and play a game of honesty with you. After each question you should get an audio response from Zdravko and in the end a result of analyzing your voice articulation to tell if you are telling the truth or lies mostly, i.e. are you a liar or not. Secondly, Zdravko can accept your selfie photo and tell you something about your current emotional state.
+- finally we'd like to make different celebrity personalities that the bot would impersonate so you could choose different ones
 
 ### USEFUL LINKS:
 
@@ -26,6 +27,3 @@ https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-quickst
 
 **bot emulator:**
 https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
-
-**Z.M. soundboard:**
-http://zdravko-mamic.com/
