@@ -1,20 +1,17 @@
 ﻿using FamousCroatianConfessionBot.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using FamousCroatianConfessionBot.Service;
 using System.Web.Http;
-using System.Web.Routing;
 
-namespace FamousCroatianConfessionBot
-{
-	public class WebApiApplication : System.Web.HttpApplication
+namespace FamousCroatianConfessionBot {
+  public class WebApiApplication : System.Web.HttpApplication
 	{
 		protected void Application_Start()
 		{
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 			BotConfig.Configure();
 			DataModel.LoadFromFile();
+
+      SlackEndPoint.StartSlackClient();
 		}
 
 		protected void Application_End() {
