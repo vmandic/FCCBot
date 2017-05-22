@@ -135,7 +135,9 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\BotConfig.cs" />
+    <Compile Include="Bot\FccActivity.cs" />
     <Compile Include="Bot\FccBot.cs" />
+    <Compile Include="Bot\FccBotCommands.cs" />
     <Compile Include="Bot\FccBotState.cs" />
     <Compile Include="Bot\FccBotStrings.cs" />
     <Compile Include="Bot\FccBotUserData.cs" />

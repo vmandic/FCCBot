@@ -4,7 +4,6 @@ using Microsoft.ProjectOxford.Emotion;
 using System;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using Response = FamousCroatianConfessionBot.Bot.FccBotStrings;
 
@@ -58,34 +57,46 @@ namespace FamousCroatianConfessionBot.Bot
     {
       try
       {
-        var strReplyMessage = new StringBuilder();
-        if (data.AskedForUserName == false)
+        string reply = null;
+
+        if (String.IsNullOrWhiteSpace(activity.Text))
+          return Response.YOU_SAID_NOTHING_PLEASE_SPEAK_UP;
+
+        if (activity.Text.Split(' ').Any(x => x.ToLowerInvariant() == FccBotCommands.HELP))
+          return Response.SHOW_HELP;
+
+        if (activity.Text.Split(' ').Any(x => x.ToLowerInvariant() == FccBotCommands.COMMANDS))
+          return Response.SHOW_COMMANDS;
+
+        if (activity.Text.Split(' ').Any(x => x.ToLowerInvariant() == FccBotCommands.HI))
+          return Response.HI_BACK;
+
+        if (activity.Text.Split(' ').Any(x => x.ToLowerInvariant() == FccBotCommands.HELLO))
+          return Response.HELLO_BACK;
+
+        if (reply == null && data.AskedForUserName == false)
         {
-          strReplyMessage.Append($"Hey what's up! :)");
-          strReplyMessage.Append($"\n\r");
-          strReplyMessage.Append($"I'd like to know who are you?");
+          reply = Response.HELLO_MSG_AND_ASK_FOR_NAME;  
 
           // Set BotUserData
           data.AskedForUserName = true;
         }
         else
         {
-          if (data.UserName == null) // Name was never provided
+          if (reply == null && data.UserName == null) // Name was never provided
           {
             // If we have asked for a username but it has not been set
             // the current response is the user name
-            strReplyMessage.Append($"Hey there {activity.Text}! Speak up... :)");
+            reply = String.Format(Response.HEY_THERE_USER_SPEAK_UP, activity.Text);
 
             // Set BotUserData
             data.UserName = activity.Text;
           }
           else // Name was provided
-          {
-            strReplyMessage.Append($"{data.UserName}, you said and I'll repeat: \"{activity.Text}\"\n\r");
-            strReplyMessage.Append($"If you'd like to see something smart... send me a selfie photo! :)");
-          }
+            reply = String.Format(Response.REPEAT_AND_ASK_FOR_SELFIE, data.UserName, activity.Text);
         }
-        return strReplyMessage.ToString();
+
+        return reply;
       }
       catch (Exception ex)
       {
@@ -97,7 +108,7 @@ namespace FamousCroatianConfessionBot.Bot
     {
       var s = new[]
       {
-        $"ˇˇˇˇˇˇˇ SCORE ˇˇˇˇˇˇˇ",
+        $"========== YOUR EMOTIONS SCORE ==========",
         $"Anger:     {PrintFloat(e.Scores.Anger)}",
         $"Contempt:  {PrintFloat(e.Scores.Contempt)}",
         $"Disgust:   {PrintFloat(e.Scores.Disgust)}",
@@ -108,7 +119,7 @@ namespace FamousCroatianConfessionBot.Bot
         $"Surprise:  {PrintFloat(e.Scores.Surprise)}"
       };
 
-      return System.String.Join("\n\r", s);
+      return String.Join("\n\r", s);
     }
 
     private static async Task<string> RecognizeEmotionsFromPortraitImage(System.IO.Stream imgStream)
@@ -120,7 +131,7 @@ namespace FamousCroatianConfessionBot.Bot
       return string.Join("\n\r\n\r", strEmotions);
     }
 
-    private static string PrintFloat(float f) => f.ToString("0.########");
+    private static string PrintFloat(float f) => Math.Round(f, 2).ToString("0.######## %");
 
     public async Task CreateTextReply(Activity activity, string text)
     {
@@ -145,30 +156,11 @@ namespace FamousCroatianConfessionBot.Bot
     {
       if (message.Type == ActivityTypes.DeleteUserData)
       {
-        // Get BotUserData
-        StateClient sc = message.GetStateClient();
-        BotData userData = sc.BotState.GetPrivateConversationData
-        (
-          message.ChannelId,
-          message.Conversation.Id,
-          message.From.Id
-        );
-
-        // Set BotUserData
-        userData.SetProperty(nameof(FccBotUserData), new FccBotUserData());
-
-        // Save BotUserData
-        sc.BotState.SetPrivateConversationData
-        (
-          message.ChannelId,
-          message.Conversation.Id,
-          message.From.Id,
-          userData
-        );
+        DeleteUserData(message);
 
         // Create a reply message
         ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-        Activity replyMessage = message.CreateReply("Personal data has been deleted.");
+        Activity replyMessage = message.CreateReply(Response.GOOD_BYE);
 
         return replyMessage;
       }
@@ -192,6 +184,30 @@ namespace FamousCroatianConfessionBot.Bot
       }
 
       return null;
+    }
+
+    private static void DeleteUserData(Activity message)
+    {
+      // Get BotUserData
+      StateClient sc = message.GetStateClient();
+      BotData userData = sc.BotState.GetPrivateConversationData
+      (
+        message.ChannelId,
+        message.Conversation.Id,
+        message.From.Id
+      );
+
+      // Set BotUserData
+      userData.SetProperty(nameof(FccBotUserData), new FccBotUserData());
+
+      // Save BotUserData
+      sc.BotState.SetPrivateConversationData
+      (
+        message.ChannelId,
+        message.Conversation.Id,
+        message.From.Id,
+        userData
+      );
     }
   }
 }

@@ -1,6 +1,6 @@
-# FCCBot (a famous croatian person confession bot)
+# FCCBot (can tell you how you feel from your photo and say hi)
 
-This bot will help you confess your trubles and show your true feelings to a famous croatian person. So, you can have a nice chat with Mr. Zdravko (the bot's name). Zdravko can test your honesty and tell you how you feel by sending him a nice selfie of yourself. Good luck and chat fair! :)
+This bot will help you confess your troubles and show your true feelings. So, you can have a nice chat with Mr. Zdravko (the bot's name). Zdravko can have a very basic chat with you and tell you how you feel by sending him a nice selfie of yourself. Good luck and chat fair! :)
 
 ---
 
@@ -12,8 +12,8 @@ This bot will help you confess your trubles and show your true feelings to a fam
 
 ### IDEA / ABOUT:
 - inception at our company's friday hackathon, just for fun, no *real-deal* thing... our goal was to build a bot, host it, make it public and make it use some "cognitive" services :)
-- Zdravko has two main features or tasks if you wish. First, Zdravko can ask you a series of simple YES or NO questions and play a game of honesty with you. After each question you should get an audio response from Zdravko and in the end a result of analyzing your voice articulation to tell if you are telling the truth or lies mostly, i.e. are you a liar or not. Secondly, Zdravko can accept your selfie photo and tell you something about your current emotional state.
-- finally we'd like to make different celebrity personalities that the bot would impersonate so you could choose different ones
+- Zdravko can responde to some commands like help, commands, hi, hello and good bye / bye, and he can analyze your selfie photo and do a recognition of your emotions.
+- the whole idea was to impersonate some famous croatian celebrity and you chat with him/her by confessing your most evil sins and sending the bot your photo. After the magical analysis the bot would tell you if you were honest and how to repent, and also respond to you with a familiar audio voice of the impersonated person you had a chat with.
 
 ### USEFUL LINKS:
 
