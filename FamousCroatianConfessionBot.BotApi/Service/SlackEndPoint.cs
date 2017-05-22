@@ -56,7 +56,7 @@ namespace FamousCroatianConfessionBot.Service {
               var text = FccBot.RecognizeEmotionsFromPortraitImage( imgStream ).Result;
               var res = new BotMessage {
                 ChatHub = val.ChatHub,
-                Text = text
+                Text = $"```{text.Replace("\r", "")}```"
               };
               conn.Say( res );
             }
