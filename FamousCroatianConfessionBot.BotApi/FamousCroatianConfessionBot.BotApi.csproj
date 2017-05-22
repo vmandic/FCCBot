@@ -152,6 +152,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="appSettings.config" />
     <None Include="Properties\PublishProfiles\FCCBot-BotApi - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
