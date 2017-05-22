@@ -56,9 +56,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="App.config" />
-    <None Include="appSettings.config">
+    <Content Include="appSettings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="ProcessTypes.fs" />
     <Compile Include="Hannibal.fs" />

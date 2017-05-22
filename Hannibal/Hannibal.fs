@@ -20,7 +20,10 @@ let slackRTM (token: string) f (inbox: SlackMessageWithContext Agent) =
     
     printfn "MSG RECEIVED: %A" msg
     
-    f (msg, connection)
+    try
+      f (msg, connection)
+    with ex ->
+      printfn "MSG ERROR: %A" <| ex.GetBaseException()
 
     return! loop ()
   }

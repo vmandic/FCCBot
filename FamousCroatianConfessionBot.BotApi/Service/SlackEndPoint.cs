@@ -7,6 +7,7 @@ using SlackAPI;
 using SlackConnector;
 using SlackConnector.Models;
 using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -49,12 +50,16 @@ namespace FamousCroatianConfessionBot.Service {
           var d = JsonConvert.DeserializeObject<Message>( val.RawData );
           if ( d.file != null ) {
             // Process file (image)
-            var imgStream = WebRequest.Create( d.file.url_private_download ).GetResponse().GetResponseStream();
-            var text = FccBot.RecognizeEmotionsFromPortraitImage( imgStream ).Result;
-            var res = new BotMessage {
-              ChatHub = val.ChatHub,
-              Text = text
-            };
+            var request = WebRequest.Create( d.file.url_private_download );
+            request.Headers.Add( "Authorization", $"Bearer {SlackBotToken}" );
+            using ( var imgStream = request.GetResponse().GetResponseStream() ) {
+              var text = FccBot.RecognizeEmotionsFromPortraitImage( imgStream ).Result;
+              var res = new BotMessage {
+                ChatHub = val.ChatHub,
+                Text = text
+              };
+              conn.Say( res );
+            }
           } else {
             // Process text
             var res = GetReplay( val );
