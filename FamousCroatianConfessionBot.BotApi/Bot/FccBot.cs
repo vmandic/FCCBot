@@ -111,10 +111,19 @@ namespace FamousCroatianConfessionBot.Bot
       return System.String.Join("\n\r", s);
     }
 
-    private static async Task<string> RecognizeEmotionsFromPortraitImage(System.IO.Stream imgStream)
+    public static async Task<string> RecognizeEmotionsFromPortraitImage(System.IO.Stream imgStream)
     {
       var emotionServiceClient = new EmotionServiceClient(BotConfig.MS_COGNITIVE_API_KEY);
       var emotions = await emotionServiceClient.RecognizeAsync(imgStream);
+      var strEmotions = emotions.Select(PrintEmotion);
+
+      return string.Join("\n\r\n\r", strEmotions);
+    }
+
+    public static async Task<string> RecognizeEmotionsFromPortraitImage(string imageUrl)
+    {
+      var emotionServiceClient = new EmotionServiceClient(BotConfig.MS_COGNITIVE_API_KEY);
+      var emotions = await emotionServiceClient.RecognizeAsync(imageUrl);
       var strEmotions = emotions.Select(PrintEmotion);
 
       return string.Join("\n\r\n\r", strEmotions);

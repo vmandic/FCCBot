@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8d1c035f-f61e-4ab5-a2df-66001bbb371d</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Hannibal</RootNamespace>
+    <AssemblyName>Hannibal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+    <Name>Hannibal</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\Hannibal.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\Hannibal.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" />
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="App.config" />
+    <None Include="appSettings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="ProcessTypes.fs" />
+    <Compile Include="Hannibal.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Flurl">
+      <HintPath>..\packages\Flurl.2.3.0\lib\netstandard1.4\Flurl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flurl.Http">
+      <HintPath>..\packages\Flurl.Http.1.1.2\lib\net45\Flurl.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.1.17\lib\net45\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SlackConnector">
+      <HintPath>..\packages\SlackConnector.3.1.201\lib\net461\SlackConnector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions">
+      <HintPath>..\packages\System.Reflection.TypeExtensions.4.1.0\lib\net46\System.Reflection.TypeExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.0.1\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="websocket-sharp-with-proxy-support">
+      <HintPath>..\packages\websocket-sharp-with-proxy-support.1.9.1\lib\net35-client\websocket-sharp-with-proxy-support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SlackAPI\SlackAPI.csproj">
+      <Name>SlackAPI</Name>
+      <Project>{fa52bde2-f445-420f-a05b-200116de81ba}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -5,6 +5,16 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamousCroatianConfessionBot.BotApi", "FamousCroatianConfessionBot.BotApi\FamousCroatianConfessionBot.BotApi.csproj", "{0C8DEB55-72D6-46B8-AB8D-9B8F01552DA3}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hannibal", "Hannibal\Hannibal.fsproj", "{8D1C035F-F61E-4AB5-A2DF-66001BBB371D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackAPI", "SlackAPI\SlackAPI.csproj", "{FA52BDE2-F445-420F-A05B-200116DE81BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{51E186E9-D4D8-4B14-8941-021062B9E86A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,14 @@ Global
 		{0C8DEB55-72D6-46B8-AB8D-9B8F01552DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C8DEB55-72D6-46B8-AB8D-9B8F01552DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C8DEB55-72D6-46B8-AB8D-9B8F01552DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1C035F-F61E-4AB5-A2DF-66001BBB371D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1C035F-F61E-4AB5-A2DF-66001BBB371D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1C035F-F61E-4AB5-A2DF-66001BBB371D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1C035F-F61E-4AB5-A2DF-66001BBB371D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA52BDE2-F445-420F-A05B-200116DE81BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA52BDE2-F445-420F-A05B-200116DE81BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA52BDE2-F445-420F-A05B-200116DE81BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA52BDE2-F445-420F-A05B-200116DE81BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
